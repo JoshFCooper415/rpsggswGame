@@ -1,6 +1,6 @@
 import socket
 import threading
-
+from ip import NetworkConfig
 # Basic game logic for the expanded version of Rock, Paper, Scissors
 def game_logic(player1_choice, player2_choice):
     # Define the choices and their relationships
@@ -22,8 +22,8 @@ def game_logic(player1_choice, player2_choice):
         return "Player 2 wins!"
 
 def server_program():
-    host = socket.gethostname()
-    port = 12345
+    host = NetworkConfig
+    port = NetworkConfig
 
     server_socket = socket.socket()
     server_socket.bind((host, port))
@@ -47,8 +47,8 @@ def server_program():
     conn.close()
 
 def client_program():
-    host = socket.gethostname()
-    port = 12345
+    host = NetworkConfig.host
+    port = NetworkConfig.port
 
     client_socket = socket.socket()
     client_socket.connect((host, port))
